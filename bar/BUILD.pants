@@ -1,0 +1,7 @@
+python_library(name="lib", sources=["bar/*.py"], dependencies=[])
+
+python_tests(
+    name="test", coverage="bar", sources=["tests/**/*.py"], dependencies=[":lib"]
+)
+
+python_binary(name="bin-bar", dependencies=[":lib"], entry_point="bar:bar")
